@@ -24,8 +24,9 @@ I'm gonna point out few important things that make this command work.
   - Libx264 doesn't like height/width that isn't divisible by 2. So that's also an extra measure.
 - `-shortest` shorts the loop. Well, basically, since the first input `cover.jpg` is being looped constantly thanks to the first flag, we **need** to stop encoding once audio is done, because if we don't do this, it will continue encoding indefinitely until we fill our disk space with cover art.
 
-And here's the result *hopefully:*
+# The *very hopeful* result
 
 **New Order - Blue Monday**
-<video src="_media/New Order - Blue Monday.webm" controls style="max-width: 512px;"></video>
+<div style="max-width: 512px;"></div>
+![[ffmpeg/_media/New Order - Blue Monday.webm]]
 [FFMPEG command](_media/New Order - Blue Monday.webm-ffmpeg.txt)
