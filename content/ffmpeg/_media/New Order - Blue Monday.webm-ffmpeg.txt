@@ -1,0 +1,1 @@
+ffmpeg -y -loop 1 -i .\cover.JPG -ss 01:30 -to 01:40 -i '.\01 - Blue Monday.flac' -map 0:v -map 1:a -pix_fmt yuv420p -vf scale=1080:-2:flags=lanczos -c:v libsvtav1 -preset 6 -c:a libopus -b:a 80k -shortest -movflags +faststart '.\New Order - Blue Monday.webm'
