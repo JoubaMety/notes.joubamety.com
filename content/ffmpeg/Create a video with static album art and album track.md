@@ -25,8 +25,10 @@ I'm gonna point out few important things that make this command work.
 - `-shortest` shorts the loop. Well, basically, since the first input `cover.jpg` is being looped constantly thanks to the first flag, we **need** to stop encoding once audio is done, because if we don't do this, it will continue encoding indefinitely until we fill our disk space with cover art.
 
 # The *very hopeful* result
-
-**New Order - Blue Monday**
+<br>
 <div style="max-width: 512px;"></div>
 ![[ffmpeg/_media/New Order - Blue Monday.webm]]
-[FFMPEG command](_media/New Order - Blue Monday.webm-ffmpeg.txt)
+- **New Order - Blue Monday**
+```bash
+ffmpeg -y -loop 1 -i .\cover.JPG -ss 01:30 -to 01:40 -i '.\01 - Blue Monday.flac' -map 0:v -map 1:a -pix_fmt yuv420p -vf scale=256:-2:flags=lanczos -c:v libsvtav1 -preset 6 -c:a libopus -b:a 80k -shortest -movflags +faststart '.\New Order - Blue Monday.webm'
+```
