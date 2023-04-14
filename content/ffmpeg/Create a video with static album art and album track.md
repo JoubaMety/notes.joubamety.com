@@ -1,8 +1,10 @@
 ---
 title: Create a video with static album art and album track
+enableToc: false
 tags:
 - ffmpeg
 - static image
+  
 ---
 Sometimes, I like to share music to my Discord friends. **Unfortunately, Discord doesn't yet have native audio player in mobile apps.**
 So in order for my iOS/Android friends to still be able to play music without having to download them, I've started using ffmpeg to create videos with album art and music track VERY quickly, without the need of some kind of video editor, just one *(or multiple, depending on complexity of problem.)*
@@ -25,8 +27,6 @@ I'm gonna point out few important things that make this command work.
 - `-shortest` shorts the loop. Well, basically, since the first input `cover.jpg` is being looped constantly thanks to the first flag, we **need** to stop encoding once audio is done, because if we don't do this, it will continue encoding indefinitely until we fill our disk space with cover art.
 
 # The *very hopeful* result
-<br>
-<div style="max-width: 512px;"></div>
 ![[ffmpeg/_media/New Order - Blue Monday.webm]]
 - **New Order - Blue Monday**
 ```bash
