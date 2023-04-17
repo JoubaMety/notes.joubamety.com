@@ -7,7 +7,7 @@ individual video weighing at around `9 MB`.
 
 # AVC/H.264
 <video id="video1" controls width="512">
-	<source src="/test/_media/site_support_01_AVC.mp4" type='video/mp4; codecs="avc1"'>
+	<source src="/test/_media/site_support_01_AVC.mp4" type="video/mp4">
 	Huh
 </video>
 <script>
