@@ -9,3 +9,4 @@ I also help some people with `ffmpeg`, so having a place which I can just link t
 
 Here are the main tags, where you can find notes under:
 - [[/tags/video|Video]] - Here, you can find stuff related to creating or transcoding videos
+- [[test/video_codecs|Video Codec Test]] - For checking browser support of various video codecs (Apple being really notorious for this)
