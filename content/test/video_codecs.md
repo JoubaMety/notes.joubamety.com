@@ -35,6 +35,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'D:\Games\MultiMC\instances\Mikeinette 2
 ```
 # HEVC/H.265
 <video id="video2" controls width="512">
+	<source src="/test/_media/site_support_02_HEVC.mp4" type='video/mp4'>
 	<source src="/test/_media/site_support_02_HEVC.mp4" type='video/mp4; codecs="hvc1"'>
 	Huh
 </video>
