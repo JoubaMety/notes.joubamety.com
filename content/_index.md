@@ -8,4 +8,4 @@ What inspired me to start this was that I was often finding myself scrolling thr
 I also help some people with `ffmpeg`, so having a place which I can just link to other people, with better info rather than remembering from head, which can be sometimes treacherous or even dangerous.<br>
 
 Here are the main tags, where you can find notes under:
-- [[/video|Video]] - Here, you can find stuff related to creating or transcoding videos
+- [[/tags/video|Video]] - Here, you can find stuff related to creating or transcoding videos

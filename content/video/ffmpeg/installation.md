@@ -1,5 +1,6 @@
 ---
 title: FFMPEG Installation
+enableToc: false
 tags:
 - ffmpeg
 - installation
