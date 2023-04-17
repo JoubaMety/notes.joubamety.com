@@ -30,7 +30,7 @@ I'm gonna point out few important things that make this command work.
 
 # The *very hopeful* result
 <video id="myvideo" controls width="256">
-	<source src="https://cdn.discordapp.com/attachments/677266163994198020/1069037555758141600/Imagine_Dragons_-_Bones_Final_4K_Prhq-SVTAV1.mp4" type="video/mp4">
+	<source src="/video/ffmpeg/_media/New Order - Blue Monday.mp4" type="video/mp4">
 	Huh
 </video>
 <script>
