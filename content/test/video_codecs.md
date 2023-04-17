@@ -20,7 +20,7 @@ $ ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf 
 ```
 ```
 $ ffprobe ".\site_support_01_AVC.mp4"
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'D:\Games\MultiMC\instances\Mikeinette 2.0\.minecraft\movies-144hz\site_support_01_AVC.mp4':
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_01_AVC.mp4':
   Metadata:
     major_brand     : isom
     minor_version   : 512
@@ -45,23 +45,36 @@ video.setAttribute("controls","controls")
 </script>
 
 ```powershell
-$ ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "fps=60" -c:v hevc_nvenc -preset p7 -b:v 4M -movflags +faststart ".\site_support_02_HEVC.mp4"
+$ ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "fps=60" -c:v hevc_nvenc -preset p7 -b:v 4M -tag:v hvc1 -movflags +faststart ".\site_support_02_HEVC.mp4"
 ```
 ```
 $ ffprobe ".\site_support_02_HEVC.mp4"
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'D:\Games\MultiMC\instances\Mikeinette 2.0\.minecraft\movies-144hz\site_support_02_HEVC.mp4':
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_02_HEVC.mp4':
   Metadata:
     major_brand     : isom
     minor_version   : 512
     compatible_brands: isomiso2mp41
     encoder         : Lavf60.4.100
   Duration: 00:00:18.03, start: 0.000000, bitrate: 4176 kb/s
-  Stream #0:0[0x1](und): Video: hevc (Main) (hev1 / 0x31766568), yuv420p(tv, progressive), 1440x1080 [SAR 1:1 DAR 4:3], 4170 kb/s, 60 fps, 60 tbr, 15360 tbn (default)
+  Stream #0:0[0x1](und): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, progressive), 1440x1080 [SAR 1:1 DAR 4:3], 4170 kb/s, 60 fps, 60 tbr, 15360 tbn (default)
     Metadata:
       handler_name    : VideoHandler
       vendor_id       : [0][0][0][0]
       encoder         : Lavc60.5.100 hevc_nvenc
 ```
+* Important note about HEVC support:
+	* Normally, `ffmpeg` produces HEVC content with `hev1` tag, **but Apple decided to be a \*\*\*\* and require HEVC content to have `hvc1` tag instead!**
+	* So not only you have to tell the container to store it as `hvc1` via `-tag:v hvc1`, you also might have to tell the browser that there's even a `hvc1` source!
+	* For example, the current code for HEVC embed above:
+	  ```html
+		<video id="video2" controls width="512">
+			<source src="/test/_media/site_support_02_HEVC.mp4" type='video/mp4'>
+			<source src="/test/_media/site_support_02_HEVC.mp4" type='video/mp4; codecs="hvc1"'>
+			Huh
+		</video>
+	  ```
+		* Reason for having two sources is because Chromium doesn't deal with this Apple thing, making the HEVC video unplayable!<br>
+		  But by including the normal source first makes it playable for Chromium users, and Apple (Safari) will play the second one! Splendid!
 # VP9
 <video id="video3" controls width="512">
 	<source src="/test/_media/site_support_03_VP9.mp4" type="video/mp4">
@@ -77,7 +90,7 @@ $ ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf 
 ```
 ```
 $ ffprobe ".\site_support_03_VP9.mp4"
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'D:\Games\MultiMC\instances\Mikeinette 2.0\.minecraft\movies-144hz\site_support_03_VP9.mp4':
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_03_VP9.mp4':
   Metadata:
     major_brand     : isom
     minor_version   : 512
@@ -105,7 +118,7 @@ $ ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf 
 ```
 ```
 $ ffprobe ".\site_support_04_AV1_SVT.mp4"
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'D:\Games\MultiMC\instances\Mikeinette 2.0\.minecraft\movies-144hz\site_support_04_AV1_SVT.mp4':
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_04_AV1_SVT.mp4':
   Metadata:
     major_brand     : isom
     minor_version   : 512
