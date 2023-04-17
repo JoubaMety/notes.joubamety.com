@@ -4,7 +4,6 @@ tags:
 - ffmpeg
 - installation
 - windows
-- linux
 ---
 # What's FFMPEG?
 # Install FFMPEG on Windows
@@ -18,3 +17,4 @@ tags:
 	* Create new entry with `New` button and paste the copied path
 	* `OK` the two windows
 	* You should be good to go! (As is obvious, you'll have to restart your terminal to apply new Env. Var.)
+	* Type `ffmpeg` in Terminal To Make Sure Env. Var. Is Set Correctly!
