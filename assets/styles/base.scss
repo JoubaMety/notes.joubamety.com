@@ -21,7 +21,7 @@ html {
 }
 
 .singlePage {
-  padding: 4em 30vw;
+  padding: 4em;
   margin: 0 auto;
   max-width: 1000px;
   @media all and (max-width: 1200px) {
@@ -616,6 +616,16 @@ header {
 
   li a {
     padding: 0 1em;
+  }
+
+  li a svg {
+    display: inline-block;
+    vertical-align: middle;
+
+    fill: var(--secondary);
+    &:hover {
+      fill: var(--tertiary) !important;
+    }
   }
 }
 

@@ -12,7 +12,7 @@
             <li><a href="{{ $.Site.BaseURL}}">{{ i18n "home" }}</a></li>
             {{end}}
             {{- range $data.links | default $.Site.Data.config.links -}}
-            <li><a href="{{.link}}">{{.link_name}}</a></li>
+            <li><a href="{{.link}}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 {{.link_icon_viewbox}}"><path d="{{.link_icon}}"/></svg></a></li>
             {{- end -}}
         </ul>
     </footer>
