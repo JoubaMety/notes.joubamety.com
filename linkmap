@@ -1,4 +1,5 @@
 /index.html /
+/secret/pfp/index.{html} /secret/pfp/
 /test/video_codecs/index.{html} /test/video_codecs/
 /video/ffmpeg/installation/index.{html} /video/ffmpeg/installation/
 /video/ffmpeg/video_with_static_background_image_and_audio/index.{html} /video/ffmpeg/video_with_static_background_image_and_audio/
