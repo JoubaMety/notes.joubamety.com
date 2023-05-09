@@ -616,16 +616,17 @@ header {
 
   li a {
     padding: 0 1em;
+    color: var(--secondary);
+    fill: var(--secondary);
+    &:hover {
+      color: var(--tertiary) !important;
+      fill: var(--tertiary) !important;
+    }
   }
 
   li a svg {
     display: inline-block;
     vertical-align: middle;
-
-    fill: var(--secondary);
-    &:hover {
-      fill: var(--tertiary) !important;
-    }
   }
 }
 

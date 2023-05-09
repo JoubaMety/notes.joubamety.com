@@ -1,8 +1,7 @@
 const svgCopy =
-    '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg>';
+    '<svg aria-hidden="true" height="16" viewBox="0 0 48 48" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" d="M16.3 38.35q-1.95 0-3.325-1.375Q11.6 35.6 11.6 33.65V6.55q0-1.95 1.375-3.35Q14.35 1.8 16.3 1.8h21.1q1.95 0 3.35 1.4 1.4 1.4 1.4 3.35v27.1q0 1.95-1.4 3.325-1.4 1.375-3.35 1.375Zm0-4.7h21.1V6.55H16.3v27.1ZM8.6 46.1q-1.95 0-3.35-1.4-1.4-1.4-1.4-3.35V14q0-1 .675-1.675t1.725-.675q1 0 1.675.675T8.6 14v27.35h20.9q1 0 1.675.675t.675 1.725q0 1-.675 1.675T29.5 46.1Zm7.7-39.55v27.1-27.1Z"/></svg>';
 const svgCheck =
-    '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" fill="rgb(63, 185, 80)" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>';
-
+    '<svg aria-hidden="true" height="16" viewBox="0 0 48 48" version="1.1" width="16" data-view-component="true"><path fill-rule="evenodd" fill="rgb(63, 185, 80)" d="M18.9 35.95q-.45 0-.875-.175t-.775-.525L8.2 26.2q-.7-.7-.7-1.7t.7-1.7q.7-.7 1.675-.7.975 0 1.725.7l7.3 7.3 17.5-17.45q.7-.7 1.675-.725.975-.025 1.675.725.7.7.7 1.7t-.7 1.7l-19.2 19.2q-.35.35-.775.525-.425.175-.875.175Z"/></svg>';
 
 const addCopyButtons = () => {
     let els = document.getElementsByClassName("highlight");

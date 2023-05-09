@@ -9,10 +9,10 @@
         <p>{{ i18n "copyright" (dict "name" $name "year" $year) | safeHTML}}</p>
         <ul>
             {{ if not .IsHome }}
-            <li><a href="{{ $.Site.BaseURL}}">{{ i18n "home" }}</a></li>
+            <li><a href="{{ $.Site.BaseURL}}"><svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12h-6v-7h-4v7Z"/></svg>{{ i18n "home" }}</a></li><br><br>
             {{end}}
             {{- range $data.links | default $.Site.Data.config.links -}}
-            <li><a href="{{.link}}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 {{.link_icon_viewbox}}"><path d="{{.link_icon}}"/></svg></a></li>
+            <li><a href="{{.link}}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 {{.link_icon_viewbox}}"><path d="{{.link_icon}}"/></svg>&nbsp;{{.link_display}}</a></li>
             {{- end -}}
         </ul>
     </footer>
