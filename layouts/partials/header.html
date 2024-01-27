@@ -1,6 +1,6 @@
 <header>
-    {{ $config := cond (eq $.Site.Language.Lang "en") "config" (printf "config.%s" $.Site.Language.Lang) }}
-    <a href="/secret/pfp"><img src="/icon_128x.webp" width="48px" height="48px" style="max-width: 48px; margin: 0%; margin-right: 10px;" alt="JoubaMety's Profile Picture"></a>
+  {{ $config := cond (eq $.Site.Language.Lang "en") "config" (printf "config.%s" $.Site.Language.Lang) }}
+  <a href="/secret/pfp"><img src="/icon_128x.webp" width="48px" height="48px" style="max-width: 48px; margin: 0%; margin-right: 10px;" alt="JoubaMety's Profile Picture"></a>
     <h1 id="page-title"><a class="root-title" href="{{ "" | absLangURL }}">{{ ( index $.Site.Data $config ).page_title | default $.Site.Data.config.page_title }}</a></h1>
     <div class="spacer"></div>
     <div id="search-icon">
