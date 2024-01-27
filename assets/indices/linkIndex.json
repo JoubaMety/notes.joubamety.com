@@ -1,0 +1,48 @@
+{
+  "index": {
+    "links": {
+      "/": [
+        {
+          "source": "/",
+          "target": "/test/video_codecs",
+          "text": "Video Codec Test"
+        }
+      ],
+      "/video/ffmpeg/video_with_static_background_image_and_audio": [
+        {
+          "source": "/video/ffmpeg/video_with_static_background_image_and_audio",
+          "target": "/video/ffmpeg/installation",
+          "text": "ffmpeg"
+        }
+      ]
+    },
+    "backlinks": {
+      "/test/video_codecs": [
+        {
+          "source": "/",
+          "target": "/test/video_codecs",
+          "text": "Video Codec Test"
+        }
+      ],
+      "/video/ffmpeg/installation": [
+        {
+          "source": "/video/ffmpeg/video_with_static_background_image_and_audio",
+          "target": "/video/ffmpeg/installation",
+          "text": "ffmpeg"
+        }
+      ]
+    }
+  },
+  "links": [
+    {
+      "source": "/",
+      "target": "/test/video_codecs",
+      "text": "Video Codec Test"
+    },
+    {
+      "source": "/video/ffmpeg/video_with_static_background_image_and_audio",
+      "target": "/video/ffmpeg/installation",
+      "text": "ffmpeg"
+    }
+  ]
+}

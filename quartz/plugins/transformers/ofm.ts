@@ -237,9 +237,32 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                       },
                     }
                   } else if ([".mp4", ".webm", ".ogv", ".mov", ".mkv"].includes(ext)) {
+                    // Boolean when ext contains "_XXXautoplay=true"
+                    const autoplay = url.includes("_XXXautoplay=true")
+                    // String, which returns "controls" when autoplay is false, otherwise "autoplay muted"
+                    const controls = autoplay ? "autoplay muted loop" : "controls"
+                    // Boolean when ext contains "_XXXheight=X"
+                    const height = url.includes("_XXXheight=")
+                    // String, which returns height value when height is true, otherwise "auto"
+                    const heightValue = height ? url.match(/_XXXheight=(\d+)/)![1] : "auto"
+                    // Return "height" attribute when height is true, otherwise return "auto"
+                    const heightAttribute = height ? `height="${heightValue}"` : "auto"
+                    // Same for width
+                    const width = url.includes("_XXXwidth=")
+                    const widthValue = width ? url.match(/_XXXwidth=(\d+)/)![1] : "auto"
+                    const widthAttribute = width ? `width="${widthValue}"` : "auto"
+                    // Create style with height and/or width, otherwise ""
+                    const heightStyle = height ? `height: ${heightValue}px;` : ""
+                    const widthStyle = width ? `width: ${widthValue}px;` : ""
+                    const style = height || width ? `style="${heightStyle} ${widthStyle}"` : ""
+                    // Clean URL without autoplay query param
+                    const cleanUrl = url
+                      .replace("_XXXautoplay=true", "")
+                      .replace("_XXXheight=" + heightValue, "")
+                      .replace("_XXXwidth=" + widthValue, "")
                     return {
                       type: "html",
-                      value: `<video src="${url}" controls></video>`,
+                      value: `<video src="${cleanUrl}" ${controls} ${heightAttribute} ${widthAttribute} ${style}></video>`,
                     }
                   } else if (
                     [".mp3", ".webm", ".wav", ".m4a", ".ogg", ".3gp", ".flac"].includes(ext)
@@ -374,7 +397,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
               if (parent && index != undefined && videoExtensionRegex.test(node.url)) {
                 const newNode: Html = {
                   type: "html",
-                  value: `<video controls src="${node.url}"></video>`,
+                  value: `<video autoplay muted src="${node.url}"></video>`,
                 }
 
                 parent.children.splice(index, 1, newNode)
