@@ -1,5 +1,6 @@
 ---
 title: FFprobe
+description: FFprobe is a command-line tool that gathers information from multimedia streams and prints it in human- and machine-readable fashion.
 ---
 # Description
 **FFprobe** (ffprobe) is a command-line tool that gathers information from multimedia streams and prints it in human- and machine-readable fashion.

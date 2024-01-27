@@ -1,5 +1,6 @@
 ---
 title: Various Video Codecs for Browser Testing
+description: A collection of videos encoded in different Video Codecs to test Browser capabilities.
 ---
 # Outputs
 | Codec | Output |

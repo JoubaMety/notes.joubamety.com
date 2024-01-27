@@ -1,6 +1,6 @@
 ---
 title: Welcome to JoubaMety's Notes!
-autoplay: "true"
+description: A home to JoubaMety's Notes.
 ---
 ![[site_support_01_AVC_XXXheight=320_XXXwidth=427_XXXautoplay=true.mp4]]
 

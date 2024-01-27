@@ -1,5 +1,6 @@
 ---
 title: Video Codecs
+description: A Video Codecs folder.
 ---
 From Wikipedia: [Video coding format](https://en.wikipedia.org/wiki/Video_coding_format)
 

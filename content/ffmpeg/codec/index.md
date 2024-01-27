@@ -1,5 +1,6 @@
 ---
 title: Codecs
+description: A Codecs folder.
 ---
 From Wikipedia: [Content format](https://en.wikipedia.org/wiki/Content_format)
 

@@ -1,5 +1,6 @@
 ---
 title: H.265 (HEVC)
+description: A H.265 (HEVC) folder.
 ---
 **High Efficiency Video Coding** (**HEVC**), also known as **H.265** and **MPEG-H Part 2**, is a [video compression standard](https://en.wikipedia.org/wiki/Video_coding_format "Video coding format") designed as part of the [MPEG-H](https://en.wikipedia.org/wiki/MPEG-H "MPEG-H") project as a successor to the widely used [Advanced Video Coding](https://en.wikipedia.org/wiki/Advanced_Video_Coding "Advanced Video Coding") (AVC, H.264, or [MPEG-4](https://en.wikipedia.org/wiki/MPEG-4 "MPEG-4") Part 10). In comparison to AVC, HEVC offers from 25% to 50% better [data compression](https://en.wikipedia.org/wiki/Data_compression "Data compression") at the same level of [video quality](https://en.wikipedia.org/wiki/Video_quality "Video quality"), or substantially improved video quality at the same [bit rate](https://en.wikipedia.org/wiki/Bit_rate "Bit rate"). It supports resolutions up to 8192×4320, including [8K UHD](https://en.wikipedia.org/wiki/Ultra-high-definition_television "Ultra-high-definition television"), and unlike the primarily 8-bit AVC, HEVC's higher fidelity Main 10 profile has been incorporated into nearly all supporting hardware.
 

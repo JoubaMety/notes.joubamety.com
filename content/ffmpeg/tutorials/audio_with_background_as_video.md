@@ -1,5 +1,6 @@
 ---
 title: How to create video with static background and audio
+description: This tutorial will show you how to create a video with static background and audio, that doesn't use up much storage size!
 ---
 Sometimes, I like to share music to my Discord friends. **Unfortunately, Discord doesn't yet have native audio player in mobile apps. *(Except voice messages?! What's up with that, Discord?)***<br>
 So in order for my iOS/Android friends to still be able to play music without having to download them, I've started using [[ffmpeg/index|FFmpeg]] to create videos with album art and music track VERY quickly, without the need of some kind of video editor, just one *(or multiple, depending on complexity of problem.)*

@@ -49,6 +49,12 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options> | undefined> 
               data.title = file.stem ?? "Untitled"
             }
 
+            if (data.description) {
+              data.description = data.description.toString()
+            } else if (data.description === null || data.description === undefined) {
+              data.description = "No description provided."
+            }
+
             if (data.tags) {
               // coerce to array
               if (!Array.isArray(data.tags)) {
@@ -80,6 +86,7 @@ declare module "vfile" {
   interface DataMap {
     frontmatter: { [key: string]: any } & {
       title: string
+      description: string
       tags: string[]
     }
   }

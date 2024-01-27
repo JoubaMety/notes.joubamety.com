@@ -1,5 +1,6 @@
 ---
 title: VP9
+description: A VP9 folder.
 ---
 **VP9** is an [open](https://en.wikipedia.org/wiki/Open_format "Open format") and [royalty-free](https://en.wikipedia.org/wiki/Royalty-free "Royalty-free")[[1]](https://en.wikipedia.org/wiki/VP9#cite_note-Gigaom-1) [video coding format](https://en.wikipedia.org/wiki/Video_coding_format "Video coding format") developed by [Google](https://en.wikipedia.org/wiki/Google "Google").
 
