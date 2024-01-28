@@ -4,7 +4,7 @@ import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
 export default (() => {
   function Head({ cfg, fileData, externalResources }: QuartzComponentProps) {
-    const title = fileData.frontmatter?.title ?? "Untitled"
+    const title = `${fileData.frontmatter?.title} - JoubaMety's Notes` ?? "Untitled"
     const description = fileData.frontmatter?.description ?? "No description provided"
     const { css, js } = externalResources
 
