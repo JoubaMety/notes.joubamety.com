@@ -14,7 +14,7 @@ export default ((opts?: Options) => {
       <footer class={`${displayClass ?? ""}`}>
         <hr />
         <p>
-          Created with <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a>, <a href="https://github.com/JoubaMety">JoubaMety</a> © 2023 - {year}<br></br>
+          Created with <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a>, content made by <a href="https://github.com/JoubaMety">JoubaMety (Jan Rašnovský)</a> © 2023 - {year}<br></br>
           Using <a href="https://github.com/catppuccin/catppuccin">Catpuccin</a> color palette.
         </p>
         <ul>

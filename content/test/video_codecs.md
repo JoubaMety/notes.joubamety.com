@@ -9,30 +9,20 @@ description: A collection of videos encoded in different Video Codecs to test Br
 | [[ffmpeg/codec/vcodec/hevc/index\|H.265 (HEVC)]] | ![[site_support_02_HEVC_XXXheight=320_XXXwidth=427.mp4]] |
 | [[ffmpeg/codec/vcodec/vp9/index\|VP9]] | ![[site_support_03_VP9_XXXheight=320_XXXwidth=427.mp4]] |
 | [[ffmpeg/codec/vcodec/av1/index\|AV1]] | ![[site_support_04_AV1_SVT_XXXheight=320_XXXwidth=427.mp4]] |
+> [!warning]
+> It's possible that you won't be able to playback HEVC video due to browser implementation issues. See [[browser_support|here]] for more info. 
 # Details
 ## Commands
-### [[ffmpeg/codec/vcodec/avc/index|H.264 (AVC)]]
+### H.264 (AVC)
 ```ps
 -c:v h264_nvenc -preset p7 -b:v 4M
 ```
 ```ps
 ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "fps=60"  -c:v h264_nvenc -preset p7 -b:v 4M -movflags +faststart ".\site_support_01_AVC.mp4"
 ```
-### [[ffmpeg/codec/vcodec/hevc/index|H.265 (HEVC)]]
+### H.265 (HEVC)
 > [!warning]
-> 
-> We add `hvc1` tag to the video codec section because Apple devices won't be able to recognise HEVC videos *as HEVC videos*!
-> > [!failure]- HEVC videos on Websites
-> > In addition to adding the tag, we need to tell the browser that the video even has HEVC video, like in this example:
-> > ```html
-> > <video id="video2" controls width="512">
-> > 	<source src="/_media/test_video-codecs/site_support_02_HEVC.mp4" type='video/mp4'>
-> > 	<source src="/_media/test_video-codecs/site_support_02_HEVC.mp4" type='video/mp4; codecs="hvc1"'>
-> > 	Huh
-> > </video>
-> > ```
-> > - Reason for having two sources is because Chromium doesn’t deal with this Apple thing, making the HEVC video unplayable!  
-> >   But by including the normal source first makes it playable for Chromium users, and Apple (Safari) will play the second one! Splendid!
+> HEVC content needs extra care when handling. See [[browser_support|here]] for more info. 
 
 ```ps
 -c:v hevc_nvenc -preset p7 -b:v 4M -tag:v hvc1 
@@ -40,14 +30,14 @@ ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "f
 ```ps
 ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "fps=60" -c:v hevc_nvenc -preset p7 -b:v 4M -tag:v hvc1 -movflags +faststart ".\site_support_02_HEVC.mp4"
 ```
-### [[ffmpeg/codec/vcodec/vp9/index|VP9]]
+### VP9
 ```ps
 -c:v libvpx-vp9 -row-mt 1 -b:v 4M 
 ```
 ```ps
 ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "fps=60" -c:v libvpx-vp9 -row-mt 1 -b:v 4M -movflags +faststart ".\site_support_03_VP9.mp4"
 ```
-### [[ffmpeg/codec/vcodec/av1/index|AV1]]
+### AV1
 ```ps
 -c:v libsvtav1 -preset 8 -b:v 4M 
 ```
@@ -70,7 +60,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\2022-06-07_19.51.20.mp4':
       handler_name    : VideoHandler
       vendor_id       : [0][0][0][0]
 ```
-### [[ffmpeg/codec/vcodec/avc/index|H.264 (AVC)]]
+### H.264 (AVC)
 ```
 $ ffprobe ".\site_support_01_AVC.mp4"
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_01_AVC.mp4':
@@ -86,7 +76,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_01_AVC.mp4':
       vendor_id       : [0][0][0][0]
       encoder         : Lavc60.5.100 h264_nvenc
 ```
-### [[ffmpeg/codec/vcodec/hevc/index|H.265 (HEVC)]]
+### H.265 (HEVC)
 ```
 $ ffprobe ".\site_support_02_HEVC.mp4"
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_02_HEVC.mp4':
@@ -102,7 +92,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_02_HEVC.mp4':
       vendor_id       : [0][0][0][0]
       encoder         : Lavc60.5.100 hevc_nvenc
 ```
-### [[ffmpeg/codec/vcodec/vp9/index|VP9]]
+### VP9
 ```
 $ ffprobe ".\site_support_03_VP9.mp4"
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_03_VP9.mp4':
@@ -118,7 +108,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_03_VP9.mp4':
       vendor_id       : [0][0][0][0]
       encoder         : Lavc60.5.100 libvpx-vp9
 ```
-### [[ffmpeg/codec/vcodec/av1/index|AV1]]
+### AV1
 ```
 $ ffprobe ".\site_support_04_AV1_SVT.mp4"
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_04_AV1_SVT.mp4':
