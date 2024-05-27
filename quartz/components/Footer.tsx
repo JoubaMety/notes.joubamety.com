@@ -15,6 +15,7 @@ export default ((opts?: Options) => {
         <hr />
         <p>
           Created with <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a>, content made by <a href="https://github.com/JoubaMety">JoubaMety (Jan Rašnovský)</a> © 2023 - {year}<br></br>
+          Commissioned illustration by <a href="https://coredeter.carrd.co/">coredeter</a> as a site icon .<br></br>
           Using <a href="https://github.com/catppuccin/catppuccin">Catpuccin</a> color palette.
         </p>
         <ul>
