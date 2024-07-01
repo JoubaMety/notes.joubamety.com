@@ -20,6 +20,8 @@ Popular interframe codecs such as [[ffmpeg/codec/vcodec/avc/index|H.264 (AVC)]] 
 *JPEG compression at 80% quality using [ImageMagick convert](https://imagemagick.org/script/convert.php); 1 generation (on the left) vs 1000 generations (on the right) Source: A thumbnail source for [2024-06-YUI](https://youtu.be/ksJQnBe_qGE) Minecraft machinima.*
 
 MKBHD also made a pretty cool video on this topic: [This Is What Happens When You Re-Upload a YouTube Video 1000 Times!](https://www.youtube.com/watch?v=JR4KHfqw-oE)
+
+While intraframe codecs like ==ProRes== also introduce generation loss, it's really not gonna be a problem unless you use really low profiles.[^2]
 # Practice
 ## My Experience: Minecraft Machinimas
 Before I started working on the Minecraft machinima [2024-06-YUI](https://youtu.be/ksJQnBe_qGE) ("Project"), I used high bitrate ==x264== encoder for my footage for [my 2023's Minecraft machinima](https://youtu.be/_r-IfyCsA3A), which proved to be a bit hard to edit, especially since the footage was shot at 3240x2160 resolution.
@@ -63,9 +65,10 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'footage.mov':
 
 And here's my *Encoder Arguments* / *[[ffmpeg/index|FFmpeg]] Arguments* in Minema:
 ```
--f rawvideo -pix_fmt bgr24 -s %WIDTH%x%HEIGHT% -r %FPS% -i - -vf %DEFVF% -c:v dnxhd -profile:v dnxhr_sq -pix_fmt yuv422p %NAME%.mov
+-f rawvideo -pix_fmt bgr24 -s %WIDTH%x%HEIGHT% -r %FPS% -i - -vf %DEFVF% -c:v dnxhd -profile:v dnxhr_sq %NAME%.mov
 ```
 
-In the end, recording and editing of "Project" went much faster than I expected it to be, which made me and [my consultant for "Project"](https://github.com/WoMspace) happy.
+In the end, recording and editing of "Project" went much faster than I expected it to be, which made me happy.
 
 [^1]: https://en.wikipedia.org/wiki/Video_coding_format
+[^2]: https://www.apple.com/final-cut-pro/docs/Apple_ProRes.pdf
