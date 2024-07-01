@@ -26,6 +26,7 @@ const config: QuartzConfig = {
           secondary: "#1e66f5", // Latte Blue
           tertiary: "#7287fd", // Latte Lavender
           highlight: "rgba(143, 159, 169, 0.15)",
+          text_highlight: "rgb(223, 142, 29)"
         },
         darkMode: { // Catpuccin Mocha/Frappé
           light: "#11111b", // Mocha Crust
@@ -36,6 +37,7 @@ const config: QuartzConfig = {
           secondary: "#8caaee", // Frappé Blue
           tertiary: "#babbf1", // Frappé Lavender
           highlight: "rgba(143, 159, 169, 0.15)",
+          text_highlight: "rgb(249, 226, 175)"
         },
       },
     },
