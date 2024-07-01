@@ -40,7 +40,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'footage.mp4':
 ```
 *Snippet of [[FFprobe|FFprobe]] CLI tool used for identifying streams inside media containers.*
 
-As mentioned in previous sections, this choice of video codec might not have been ideal. I was already using high bitrate to combat the quality loss and [[video_codec_selection#Generation Loss|generation loss]], and I had to slightly suffer with bad seeking performance due to [[video_codec_selection#Intraframe vs Interframe Coding[ 1]|H.264 being interframe codec]].
+As mentioned in previous sections, this choice of video codec might not have been ideal. I was already using high bitrate to combat the quality loss and [[video_codec_selection#Generation Loss|generation loss]], and I had to slightly suffer with bad seeking performance due to [[video_codec_selection#Intraframe vs Interframe Coding|H.264 being interframe codec]].
 
 So when I began work on the "Project", I went for ==DNxHR==, one of the intraframe codecs, to improve seeking performance and maintain good quality, both of which are important for video editors.
 ==DNxHR== has bunch of profiles, ranging from low quality (LQ - 8-bit 4:2:2) to cinema quality (444 - 12-bit 4:4:4). I went for SQ (8-bit 4:2:2), which was good enough for my needs.
