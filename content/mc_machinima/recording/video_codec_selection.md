@@ -67,7 +67,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'footage.mov':
 
 And here's my *Encoder Arguments* / *[[ffmpeg/index|FFmpeg]] Arguments* in Minema:
 ```
--f rawvideo -pix_fmt bgr24 -s %WIDTH%x%HEIGHT% -r %FPS% -i - -vf %DEFVF% -c:v dnxhd -profile:v dnxhr_sq %NAME%.mov
+-f rawvideo -pix_fmt bgr24 -s %WIDTH%x%HEIGHT% -r %FPS% -i - -vf %DEFVF% -c:v dnxhd -profile:v dnxhr_sq -pix_fmt yuv422p %NAME%.mov
 ```
 
 In the end, recording and editing of "Project" went much faster than I expected it to be, which made me happy, with total size of video footage being only **2.39 GB** with total duration of **02:58** and a total of **12** separate footages.
