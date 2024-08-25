@@ -11,7 +11,7 @@ You might not have album art, but you might have music file with album art insid
 ffmpeg -i music.mp3 cover.jpg
 ```
 # 1. The magic command
-We're gonna basically input two media files: album art and music, use `libx264` with `-tune -stillimage` for best possible compression and `aac` because Apple s\*\*ks a\*\*, and then output to mp4
+We're gonna basically input two media files: album art and music, use `libx264` ([[ffmpeg/codec/vcodec/avc/index|AVC]] H.264 encoder) with `-tune -stillimage` for best possible compression and `aac` because Apple s\*\*ks a\*\*, and then output to mp4
 ```bash
 ffmpeg -loop 1 -i cover.jpg -i music.mp3 -map 0:v:0 -map 1:a:0 -pix_fmt yuv420p -vf scale=1080:-2:flags=lanczos -c:v libx264 -tune stillimage -c:a aac -b:a 128k -shortest -movflags +faststart epic.mp4
 ```
@@ -42,5 +42,3 @@ $ ffmpeg -loop 1 -i '.\Syouki-Takahashi.jpg' -i '.\Midnight-Forest.mp3' -map 0:v
 | Output .mp4 (M+P) | 6.25 MiB |
 > [!note]
 > Resulting size of .mp4 can be get smaller by setting smaller `crf` or setting a specific bitrate.
-
-

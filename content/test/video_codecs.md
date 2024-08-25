@@ -10,37 +10,47 @@ description: A collection of videos encoded in different Video Codecs to test Br
 | [[ffmpeg/codec/vcodec/vp9/index\|VP9]] | ![[site_support_03_VP9_XXXheight=320_XXXwidth=427.mp4]] |
 | [[ffmpeg/codec/vcodec/av1/index\|AV1]] | ![[site_support_04_AV1_SVT_XXXheight=320_XXXwidth=427.mp4]] |
 > [!warning]
-> It's possible that you won't be able to playback HEVC video due to browser implementation issues. See [[browser_support|here]] for more info. 
+> It's possible that you won't be able to playback HEVC video due to browser implementation issues. See [[browser_support|here]] for more info.
 # Details
-## Commands
+> [!danger]
+> This section is for **advanced users only!** If you don't know [[ffmpeg/index|FFmpeg]], skip this section (or stop reading further).
+## FFmpeg Commands
 ### H.264 (AVC)
+Snippet:
 ```ps
 -c:v libx264 -preset veryslow -b:v 1M
 ```
+Full command:
 ```ps
 ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "scale=-2:720:flags=lanczos,fps=60" -c:v libx264 -preset veryslow -b:v 1M -movflags +faststart ".\site_support_01_AVC.mp4"
 ```
 ### H.265 (HEVC)
 > [!warning]
-> HEVC content needs extra care when handling. See [[browser_support|here]] for more info. 
+> HEVC content needs extra care when handling. See [[browser_support|here]] for more info.
 
+Snippet:
 ```ps
 -c:v libx265 -preset medium -b:v 1M -tag:v hvc1
 ```
+Full command:
 ```ps
 ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "scale=-2:720:flags=lanczos,fps=60" -c:v libx265 -preset medium -b:v 1M -tag:v hvc1 -movflags +faststart ".\site_support_02_HEVC.mp4"
 ```
 ### VP9
+Snippet:
 ```ps
 -c:v libvpx-vp9 -row-mt 1 -b:v 1M 
 ```
+Full command:
 ```ps
 ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "scale=-2:720:flags=lanczos,fps=60" -c:v libvpx-vp9 -row-mt 1 -b:v 4M -movflags +faststart ".\site_support_03_VP9.mp4"
 ```
 ### AV1
+Snippet:
 ```ps
 -c:v libsvtav1 -preset 8 -b:v 1M 
 ```
+Full command:
 ```ps
 ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "scale=-2:720:flags=lanczos,fps=60" -c:v libsvtav1 -preset 8 -b:v 1M -movflags +faststart ".\site_support_04_AV1_SVT.mp4"
 ```

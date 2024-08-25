@@ -3,7 +3,7 @@ title: HEVC - Browser Support
 description: A file about HEVC and it's browser support.
 ---
 As of *28th of January, 2024*, these are only handful of browsers that support playing back HEVC, like shown in this pic from [CanIUse.com](https://caniuse.com/hevc).
-![[Pasted image 20240128003212.png]]
+![[Pasted image 20240128003212.webp]]
 
 # Safari
 While Safari has native & enabled right out of the box (OOB) support, it doesn't behave how you might normally think.
@@ -43,7 +43,7 @@ For the Codec ID, it's as simple as tagging the video via `ffmpeg`:
 </video>
 ```
 
-![[Pasted image 20240711184916.png]]
+![[Pasted image 20240711184916.webp]]
 
 *State of Chromium-based browser on Windows as of 11th of July, 2024*
 # Firefox
@@ -53,7 +53,7 @@ Windows users can enable HEVC support, with some caveats.
 > Supported for devices with hardware support (the range is the same as Edge) on Windows only. Enabled by default in Nightly and can be enabled via the `media.wmf.hevc.enabled` pref in `about:config`. **10-bit or higher colors are not supported.**
 
 
-![[Pasted image 20240711184712.png]]
+![[Pasted image 20240711184712.webp]]
 
 *State of HEVC on Windows as of 11th of July, 2024*
 ## on everything else
@@ -73,7 +73,7 @@ Linux and other users are out of luck, for now, see following:
 >
 > I suggest you research about the h265 patent pools and the licensing model in use.
 
-![[Pasted image 20240128005957.png]]
+![[Pasted image 20240128005957.webp]]
 
 *State of HEVC on Linux as of 28th of January, 2024*
 # Conclusion

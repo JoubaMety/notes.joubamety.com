@@ -1,3 +1,30 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+
+:root {
+    --brainmade_logo: url('/static/brainmade-dark.svg');
+}
+
+:root[data-theme="dark"] {
+    --brainmade_logo: url('/static/brainmade-light.svg');
+}
+
+.brainmade {
+    content: var(--brainmade_logo);
+    transition: content 0.2s ease;
+    transition: filter 0.2s ease;
+}
+
+.brainmade:hover {
+    filter: brightness(1.5);
+}
+
+.footer-avatar {
+    height: 20px;
+    width: auto;
+    border-radius: 100%;
+    
+    vertical-align: middle;
+    margin: 0px;
+}

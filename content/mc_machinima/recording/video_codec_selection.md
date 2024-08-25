@@ -17,7 +17,7 @@ Difference is literally in the name, [intra](https://en.wiktionary.org/wiki/intr
 While **interframe codecs** is preferred for media consumption, because of possibly **massive reduction in file sizes**, it makes decoding (playing) the video that more computationally expensive. For that reason, even decades after introduction of [[ffmpeg/codec/vcodec/avc/index|H.264 (AVC)]], professional video editors don't usually work with it, but instead work with **intraframe codecs** like ==ProRes==, which make editing a video a breeze, but with a storage cost.
 ## Generation Loss
 Generation Loss is something that's part of lossy compression, it's basically a loss of quality that occurs after generations (compressions) of the video.
-Popular interframe codecs such as [[ffmpeg/codec/vcodec/avc/index|H.264 (AVC)]] are especially susceptible to this, more noticeable at lower bitrates. 
+Popular interframe codecs such as [[ffmpeg/codec/vcodec/avc/index|H.264 (AVC)]] are especially susceptible to this, more noticeable at lower bitrates.
 ![[generation_loss_comparison.webp]]
 *JPEG compression at 80% quality using [ImageMagick convert](https://imagemagick.org/script/convert.php); 1 generation (on the left) vs 1000 generations (on the right) Source: A thumbnail source for [2024-06-YUI](https://youtu.be/ksJQnBe_qGE) Minecraft machinima.*
 
