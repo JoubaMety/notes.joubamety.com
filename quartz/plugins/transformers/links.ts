@@ -152,6 +152,11 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options> | undefined> =
                   )
                   node.properties.src = dest
                 }
+                if (
+                  "img".includes(node.tagName)
+                ) {
+                  node.properties.onclick =" window.open(this.src, '_blank');"
+                }
               }
             })
 
