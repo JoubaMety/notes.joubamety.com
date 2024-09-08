@@ -27,7 +27,7 @@ export default ((opts?: Options) => {
           <ul>
             <li>
               <a href="https://ctp-webr.ing/notes.joubamety.com/previous">&lt;&lt;</a>&nbsp;
-              <a href="https://ctp-webr.ing/">Catppuccin webring</a>&nbsp;
+              <a href="https://ctp-webr.ing/">The Catppuccin Webring</a>&nbsp;
               <a href="https://ctp-webr.ing/notes.joubamety.com/next">&gt;&gt;</a>
             </li>
           </ul>
@@ -46,7 +46,7 @@ export default ((opts?: Options) => {
             JoubaMety (Jan Rašnovský)
           </span>
           
-          </a> © 2023 - {year}
+          </a> © 2023 - {year} (<a href="https://github.com/JoubaMety/notes.joubamety.com/blob/v4/LICENSE" target="_blank">MIT License</a>)
         </p>
       </footer>
     )
