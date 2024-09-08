@@ -13,14 +13,25 @@ export default ((opts?: Options) => {
     return (
       <footer class={`${displayClass ?? ""}`}>
         <hr />
-        <ul>
-          Other sites:
-          {Object.entries(links).map(([text, link]) => (
+        <p>
+          <ul>
+            Other sites:
+            {Object.entries(links).map(([text, link]) => (
+              <li>
+                <a href={link}>{text}</a>
+              </li>
+            ))}
+          </ul>
+        </p>
+        <p>Webrings:
+          <ul>
             <li>
-              <a href={link}>{text}</a>
+              <a href="https://ctp-webr.ing/notes.joubamety.com/previous">&lt;&lt;</a>&nbsp;
+              <a href="https://ctp-webr.ing/">Catppuccin webring</a>&nbsp;
+              <a href="https://ctp-webr.ing/notes.joubamety.com/next">&gt;&gt;</a>
             </li>
-          ))}
-        </ul>
+          </ul>
+        </p>
         <p>
           <a href="https://brainmade.org/" target="_blank"><img id="brainmade" class="brainmade" src="/static/brainmade-light.svg"></img></a>
           <br></br>
