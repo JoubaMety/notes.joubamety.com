@@ -1,7 +1,7 @@
 ---
 title: Quick FFmpeg Arguments (Minema)
 description: Place where I can quickly access frequently used FFmpeg Arguments for Minema mod.
-aliases:
+modified: 2024-08-29
 ---
 [Minema Mod](https://www.curseforge.com/minecraft/mc-mods/minema) uses FFmpeg to encode captured frames into standard codecs / containers.
 You can find ==FFmpeg Arguments== by going to `Mods -> Minema -> Encoding`

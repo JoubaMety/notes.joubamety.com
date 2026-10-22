@@ -1,6 +1,7 @@
 ---
 title: Video Codec Selection
 description: A note about codec selection when recording a Minecraft Machinima. (Can be applied to recording outside of Minecraft Machinimas)
+modified: 2024-08-12
 ---
 > [!tldr]
 > If you care more about size than anything else, use the usual [[ffmpeg/codec/vcodec/avc/index|H.264 (AVC)]], [[ffmpeg/codec/vcodec/hevc/index|H.265 (HEVC)]] or more modern [[ffmpeg/codec/vcodec/av1/index|AV1]] if your tools support it.

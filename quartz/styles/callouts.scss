@@ -1,5 +1,18 @@
 @use "./variables.scss" as *;
+@use "./catppuccin.css" as *;
 @use "sass:color";
+
+:root {
+  --normal:             var(--tertiary);
+  --abstract:           var(--secondary);
+  --info-todo:          light-dark(oklch(var(--ctp-latte-blue-oklch)), oklch(var(--ctp-mocha-blue-oklch)));
+  --tip:                light-dark(oklch(var(--ctp-latte-teal-oklch)), oklch(var(--ctp-mocha-teal-oklch)));
+  --success:            light-dark(oklch(var(--ctp-latte-green-oklch)), oklch(var(--ctp-mocha-green-oklch)));
+  --question:           light-dark(oklch(var(--ctp-latte-yellow-oklch)), oklch(var(--ctp-mocha-yellow-oklch)));
+  --warning:            light-dark(oklch(var(--ctp-latte-peach-oklch)), oklch(var(--ctp-mocha-peach-oklch)));
+  --failure-danger-bug: light-dark(oklch(var(--ctp-latte-red-oklch)), oklch(var(--ctp-mocha-red-oklch)));
+  --example:            light-dark(oklch(var(--ctp-latte-mauve-oklch)), oklch(var(--ctp-mocha-mauve-oklch)));
+}
 
 .callout {
   border: 1px solid var(--border);
@@ -11,7 +24,7 @@
 
   & > .callout-content {
     display: grid;
-    transition: grid-template-rows 0.1s cubic-bezier(0.02, 0.01, 0.47, 1);
+    transition: grid-template-rows var(--expressive-fast-spatial);
     overflow: hidden;
 
     & > :first-child {
@@ -35,24 +48,20 @@
   --callout-icon-fold: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E');
 
   &[data-callout] {
-    --color: #448aff;
-    --border: #448aff44;
-    --bg: #448aff10;
+    --color: var(--normal);
+    --border: oklch(from var(--color) l c h / .44);
+    --bg: oklch(from var(--color) l c h / .10);
     --callout-icon: var(--callout-icon-note);
   }
 
   &[data-callout="abstract"] {
-    --color: #00b0ff;
-    --border: #00b0ff44;
-    --bg: #00b0ff10;
+    --color: var(--abstract);
     --callout-icon: var(--callout-icon-abstract);
   }
 
   &[data-callout="info"],
   &[data-callout="todo"] {
-    --color: #00b8d4;
-    --border: #00b8d444;
-    --bg: #00b8d410;
+    --color: var(--info-todo);
     --callout-icon: var(--callout-icon-info);
   }
 
@@ -61,39 +70,29 @@
   }
 
   &[data-callout="tip"] {
-    --color: #00bfa5;
-    --border: #00bfa544;
-    --bg: #00bfa510;
+    --color: var(--tip);
     --callout-icon: var(--callout-icon-tip);
   }
 
   &[data-callout="success"] {
-    --color: #09ad7a;
-    --border: #09ad7144;
-    --bg: #09ad7110;
+    --color: var(--success);
     --callout-icon: var(--callout-icon-success);
   }
 
   &[data-callout="question"] {
-    --color: #dba642;
-    --border: #dba64244;
-    --bg: #dba64210;
+    --color: var(--question);
     --callout-icon: var(--callout-icon-question);
   }
 
   &[data-callout="warning"] {
-    --color: #db8942;
-    --border: #db894244;
-    --bg: #db894210;
+    --color: var(--warning);
     --callout-icon: var(--callout-icon-warning);
   }
 
   &[data-callout="failure"],
   &[data-callout="danger"],
   &[data-callout="bug"] {
-    --color: #db4242;
-    --border: #db424244;
-    --bg: #db424210;
+    --color: var(--failure-danger-bug);
     --callout-icon: var(--callout-icon-failure);
   }
 
@@ -106,15 +105,14 @@
   }
 
   &[data-callout="example"] {
-    --color: #7a43b5;
-    --border: #7a43b544;
-    --bg: #7a43b510;
+    --color: var(--example);
     --callout-icon: var(--callout-icon-example);
   }
 
   &[data-callout="quote"] {
     --color: var(--secondary);
-    --border: var(--lightgray);
+    --bg: oklch(from var(--lightgray) l c h / .44);
+    --border: oklch(from var(--lightgray) l c h / .10);
     --callout-icon: var(--callout-icon-quote);
   }
 
@@ -153,7 +151,7 @@
   --icon-size: 18px;
 
   & .fold-callout-icon {
-    transition: transform 0.15s ease;
+    transition: transform var(--expressive-fast-effects);
     opacity: 0.8;
     cursor: pointer;
     --callout-icon: var(--callout-icon-fold);

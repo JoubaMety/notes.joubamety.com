@@ -1,6 +1,7 @@
 ---
 title: How to create video with static background and audio
 description: This tutorial will show you how to create a video with static background and audio, that doesn't use up much storage size!
+modified: 2024-08-25
 ---
 Sometimes, I like to share music to my Discord friends. **Unfortunately, Discord doesn't yet have native audio player in mobile apps. *(Except voice messages?! What's up with that, Discord?)***<br>
 So in order for my iOS/Android friends to still be able to play music without having to download them, I've started using [[ffmpeg/index|FFmpeg]] to create videos with album art and music track VERY quickly, without the need of some kind of video editor, just one *(or multiple, depending on complexity of problem.)*
@@ -27,7 +28,7 @@ I'm gonna point out few important things that make this command work.
 # The *very hopeful* result
 [Midnight Forest - Syouki Takahashi](https://pixabay.com/music/ambient-midnight-forest-184304/)
 
-![[Midnight-Forest_XXXheight=420_XXXwidth=420.mp4]]
+![[Midnight-Forest.mp4]]
 
 ``` ps
 $ ffmpeg -loop 1 -i '.\Syouki-Takahashi.jpg' -i '.\Midnight-Forest.mp3' -map 0:v:0 -map 1:a:0 -pix_fmt yuv420p -vf scale=1080:-2:flags=lanczos -c:v libx264 -tune stillimage -c:a aac -b:a 128k -shortest -movflags +faststart '.\Midnight-Forest.mp4'

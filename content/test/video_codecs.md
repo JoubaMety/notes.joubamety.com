@@ -1,14 +1,15 @@
 ---
 title: Various Video Codecs for Browser Testing
 description: A collection of videos encoded in different Video Codecs to test Browser capabilities.
+modified: 2024-08-25
 ---
 # Outputs
 | Codec | Output |
 | ---- | ---- |
-| [[ffmpeg/codec/vcodec/avc/index\|H.264 (AVC)]] | ![[site_support_01_AVC_XXXheight=320_XXXwidth=427.mp4]] |
-| [[ffmpeg/codec/vcodec/hevc/index\|H.265 (HEVC)]] | ![[site_support_02_HEVC_XXXheight=320_XXXwidth=427.mp4]] |
-| [[ffmpeg/codec/vcodec/vp9/index\|VP9]] | ![[site_support_03_VP9_XXXheight=320_XXXwidth=427.mp4]] |
-| [[ffmpeg/codec/vcodec/av1/index\|AV1]] | ![[site_support_04_AV1_SVT_XXXheight=320_XXXwidth=427.mp4]] |
+| [[ffmpeg/codec/vcodec/avc/index\|H.264 (AVC)]] | ![[site_support_01_AVC.mp4]] |
+| [[ffmpeg/codec/vcodec/hevc/index\|H.265 (HEVC)]] | ![[site_support_02_HEVC.mp4]] |
+| [[ffmpeg/codec/vcodec/vp9/index\|VP9]] | ![[site_support_03_VP9.mp4]] |
+| [[ffmpeg/codec/vcodec/av1/index\|AV1]] | ![[site_support_04_AV1_SVT.mp4]] |
 > [!warning]
 > It's possible that you won't be able to playback HEVC video due to browser implementation issues. See [[browser_support|here]] for more info.
 # Details

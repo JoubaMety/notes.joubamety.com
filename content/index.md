@@ -1,6 +1,7 @@
 ---
 title: Welcome to JoubaMety's Notes!
 description: A home to JoubaMety's Notes.
+modified: 2024-08-25
 ---
 ![[banner.webp]]
 my favorite place for storing notes about:
@@ -13,4 +14,4 @@ my favorite place for storing notes about:
 * [[test/index|Stuff for testing stuff]]
 	* [[video_codecs|Various Video Codecs for Browser Testing]]
 
-![[site_support_01_AVC_XXXheight=320_XXXwidth=427_XXXautoplay=true.mp4]]
+<video src="site_support_01_AVC.mp4" autoplay muted loop></video>

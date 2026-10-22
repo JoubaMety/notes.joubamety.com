@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "plugins": {
+    "fonts": {
+      "source": "github:quartz-community/fonts",
+      "resolved": "https://github.com/quartz-community/fonts.git",
+      "commit": "e7c824b6149f46a50b98a5c1474605385090895d",
+      "installedAt": "2026-10-22T07:16:59.528Z"
+    },
+    "footer": {
+      "source": "github:JoubaMety/footer",
+      "resolved": "https://github.com/JoubaMety/footer.git",
+      "commit": "7a14ece1391f8757180b7883253a7069c0f0d5d5",
+      "installedAt": "2026-10-22T07:44:20.414Z"
+    },
+    "page-title": {
+      "source": "github:JoubaMety/page-title",
+      "resolved": "https://github.com/JoubaMety/page-title.git",
+      "commit": "5b60b332442ee65415ac332e4079dba4f6d30d81",
+      "installedAt": "2026-10-22T07:50:33.035Z"
+    }
+  }
+}
