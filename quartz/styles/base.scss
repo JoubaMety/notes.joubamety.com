@@ -25,6 +25,7 @@
 html {
   scroll-behavior: smooth;
   scrollbar-color: var(--dark) var(--light);
+  transition: scrollbar-color var(--expressive-fast-effects);
   text-size-adjust: none;
   overflow-x: hidden;
   width: 100vw;
@@ -249,6 +250,7 @@ a {
       display: flex;
       height: 100vh;
       position: sticky;
+      transition: background-color var(--expressive-fast-effects);
     }
 
     & .sidebar.left {
