@@ -51,6 +51,9 @@ body {
   background-color: var(--textHighlight);
   padding: 0 0.1rem;
   border-radius: 5px;
+  transition: 
+      background-color var(--expressive-fast-effects),
+      color var(--expressive-fast-effects);
 }
 ::selection {
   background: oklch(from var(--secondary) calc(l * 0.90) c h);
@@ -108,7 +111,9 @@ strong {
 a {
   font-weight: $semiBoldWeight;
   text-decoration: none;
-  transition: color var(--expressive-fast-effects);
+  transition: 
+      background-color var(--expressive-fast-effects),
+      color var(--expressive-fast-effects);
   color: var(--secondary);
 
   &:hover {
@@ -533,6 +538,10 @@ pre {
     padding: 0.5rem 0;
     overflow-x: auto;
 
+    transition: 
+      background-color var(--expressive-fast-effects),
+      color var(--expressive-fast-effects);
+
     & [data-highlighted-chars] {
       background-color: var(--highlight);
       border-radius: 5px;
@@ -577,6 +586,9 @@ code {
   border-radius: 5px;
   padding: 0.1rem 0.2rem;
   background: var(--lightgray);
+  transition: 
+      background-color var(--expressive-fast-effects),
+      color var(--expressive-fast-effects);
 }
 
 tbody,
