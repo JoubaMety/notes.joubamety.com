@@ -255,7 +255,9 @@ a {
       display: flex;
       height: 100vh;
       position: sticky;
-      transition: background-color var(--expressive-fast-effects);
+      transition: 
+        background-color var(--expressive-fast-effects),
+        opacity var(--expressive-slow-effects);
     }
 
     & .sidebar.left {
