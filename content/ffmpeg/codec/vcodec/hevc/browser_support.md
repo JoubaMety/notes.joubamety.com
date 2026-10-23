@@ -18,7 +18,7 @@ For the Codec ID, it's as simple as tagging the video via `ffmpeg`:
 ```
 
 ...but website also needs to specify the file is the correct codec, like :
-```html
+```html {4-5}
 <video id="video2" controls width="512">
 	<!-- Other browsers -->
 	<source src="/_media/test_video-codecs/site_support_02_HEVC.mp4" type='video/mp4'>
@@ -39,10 +39,10 @@ For the Codec ID, it's as simple as tagging the video via `ffmpeg`:
 
 >[!quote] HEVC (H.265) - Browser Compatibility
 >Firefox enables HEVC on:
->- Windows from Firefox 134 using either hardware (on devices that support it, where the range is the same as Edge) or software (on Windows the user must pay for and install an extension)
->- macOS from Firefox 136 using either hardware or software.
->- Linux from Firefox 137 using either hardware or software (via the system ffmpeg).
->- Android from Firefox 137 using hardware only.
+>- **Windows** from Firefox <u>134</u> using either **hardware** (on devices that support it, where [the range is the same as Edge](https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Video_codecs#hevc_h.265:~:text=and%20Android%205.0%2B.-,Edge%20(Chromium),-supports%20HEVC%20for)) or **software** (on Windows the user must [pay for and install an extension](https://apps.microsoft.com/detail/9nmzlz57r3t7))
+>- **macOS** from Firefox <u>136</u> using either **hardware** or **software**.
+>- **Linux** from Firefox <u>137</u> using either **hardware** or **software** (via the system [[FFmpeg]]).
+>- **Android** from Firefox <u>137</u> using **hardware only**.
 >
 >Source: [developer.mozilla.com](https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Video_codecs#hevc_h.265:~:text=Firefox%20enables%20HEVC%20on%3A)
 

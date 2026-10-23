@@ -1,7 +1,6 @@
 ---
 title: Video Codec Selection
 description: A note about codec selection when recording a Minecraft Machinima. (Can be applied to recording outside of Minecraft Machinimas)
-modified: 2024-08-12
 ---
 > [!tldr]
 > If you care more about size than anything else, use the usual [[ffmpeg/codec/vcodec/avc/index|H.264 (AVC)]], [[ffmpeg/codec/vcodec/hevc/index|H.265 (HEVC)]] or more modern [[ffmpeg/codec/vcodec/av1/index|AV1]] if your tools support it.
@@ -28,8 +27,7 @@ While intermediate codecs like ==ProRes== also introduce generation loss, it's r
 # Practice
 ## My Experience: Minecraft Machinimas
 Before I started working on the Minecraft machinima [2024-06-YUI](https://youtu.be/ksJQnBe_qGE) ("Project"), I used high bitrate ==x264== encoder for my footage for [my 2023's Minecraft machinima](https://youtu.be/_r-IfyCsA3A), which proved to be a bit hard to edit, especially since the footage was shot at 3240x2160 resolution.
-```
-$ ffprobe footage.mp4
+```bash title="$ ffprobe footage.mp4" {7-8,12}
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'footage.mp4':
   Metadata:
     major_brand     : isom
@@ -49,8 +47,7 @@ As mentioned in previous sections, this choice of video codec might not have bee
 
 So when I began work on the "Project", I went for ==DNxHR==, one of the intermediate codecs, to improve seeking performance and maintain good quality, both of which are important for video editors.
 ==DNxHR== has bunch of profiles, ranging from low quality (LQ - 8-bit 4:2:2) to cinema quality (444 - 12-bit 4:4:4). I went for SQ (8-bit 4:2:2), which was good enough for my needs, as it looked pretty much "virtually lossless" to me and file sizes weren't too bad.
-```
-$ ffprobe footage.mov
+```bash title="$ ffprobe footage.mov"  {7-8,12}
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'footage.mov':
   Metadata:
     major_brand     : qt
@@ -67,7 +64,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'footage.mov':
 *Snippet of [[FFprobe|FFprobe]] CLI tool used for identifying streams inside media containers.*
 
 And here's my *Encoder Arguments* / *[[ffmpeg/index|FFmpeg]] Arguments* in Minema:
-```
+```ps
 -f rawvideo -pix_fmt bgr24 -s %WIDTH%x%HEIGHT% -r %FPS% -i - -vf %DEFVF% -c:v dnxhd -profile:v dnxhr_sq -pix_fmt yuv422p %NAME%.mov
 ```
 

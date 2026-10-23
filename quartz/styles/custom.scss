@@ -1,3 +1,76 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// https://github.com/quartz-community/search/blob/main/src/components/styles/search.scss
+
+.search > .search-button {
+  transition: border-color var(--expressive-fast-effects);
+}
+
+.search > .search-button > p {
+  transition: color var(--expressive-fast-effects);
+}
+
+.search > .search-button svg .search-path {
+  transition: stroke var(--expressive-fast-effects);
+}
+
+// https://github.com/quartz-community/explorer/blob/main/src/components/styles/explorer.scss
+
+.explorer svg {
+  transition:
+    color var(--expressive-fast-effects),
+    transform var(--expressive-fast-spatial);
+}
+
+button.mobile-explorer h2,
+button.desktop-explorer h2 {
+  transition: color var(--expressive-fast-effects);
+}
+
+button.desktop-explorer {
+  transition: color var(--expressive-fast-effects);
+}
+
+.explorer-content .folder-outer > ul {
+  transition: border-color var(--expressive-fast-effects);
+  &:has(li a.is-active) {
+    border-color: var(--gray);
+  }
+  &:has(li:hover) {
+    border-color: var(--tertiary) !important;
+  }
+}
+
+.explorer-content > ul li:has(a:hover) svg {
+    color: var(--tertiary);
+}
+
+.explorer-content > ul li a.folder-button:hover {
+    background-color: var(--lightgray);
+}
+
+// https://github.com/quartz-community/graph/blob/main/src/components/styles/graph.scss
+
+.graph {
+  & > .graph-outer {
+    transition: border-color var(--expressive-fast-effects);
+  }
+  & > .global-graph-icon {
+    transition: color var(--expressive-fast-effects);
+  }
+  & > h3 {
+    transition: color var(--expressive-fast-effects);
+  }
+}
+
+.page>#quartz-body footer {
+    margin-top: 1rem;
+}
+
+
+span[data-rehype-pretty-code-figure] code[data-theme*=\ ],
+[saved-theme=dark] span[data-rehype-pretty-code-figure] code[data-theme*=\ ] {
+    background: var(--lightgray);
+}

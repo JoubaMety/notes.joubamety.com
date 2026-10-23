@@ -1,10 +1,9 @@
 ---
 title: Quick FFmpeg Arguments (Minema)
 description: Place where I can quickly access frequently used FFmpeg Arguments for Minema mod.
-modified: 2024-08-29
 ---
 [Minema Mod](https://www.curseforge.com/minecraft/mc-mods/minema) uses FFmpeg to encode captured frames into standard codecs / containers.
-You can find ==FFmpeg Arguments== by going to `Mods -> Minema -> Encoding`
+You can find **FFmpeg Arguments** by going to `Mods -> Minema -> Encoding`
 # DNxHR
 Learn more about ==DNxHR== in [[video_codec_selection|Video Codec Selection]]
 ## DNxHR SQ
@@ -24,7 +23,7 @@ Folder: [[ffmpeg/codec/vcodec/avc/index|AVC (H.264)]]
 ```ps
 -f rawvideo -pix_fmt bgr24 -s %WIDTH%x%HEIGHT% -r %FPS% -i - -vf %DEFVF% -pix_fmt yuv420p -c:v libx264 -preset slow -crf 23 -b:v 0 %NAME%.mov
 ```
-## -||- max/buf 8 Mbit/16Mbit
+### max/buf 8 Mbit/16Mbit
 Ideal for sharing over Discord (I consider 8Mbit to be max comfortable bitrate for Discord)
 ```ps
 -f rawvideo -pix_fmt bgr24 -s %WIDTH%x%HEIGHT% -r %FPS% -i - -vf %DEFVF% -pix_fmt yuv420p -c:v libx264 -preset slow -crf 23 -b:v 0 -maxrate 8M -bufsize 16M %NAME%.mov

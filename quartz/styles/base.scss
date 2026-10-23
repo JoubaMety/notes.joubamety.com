@@ -48,6 +48,7 @@ body {
 }
 
 .text-highlight {
+  color: var(--dark);
   background-color: var(--textHighlight);
   padding: 0 0.1rem;
   border-radius: 5px;
@@ -424,7 +425,8 @@ blockquote {
   margin: 1rem 0;
   border-left: 3px solid var(--secondary);
   padding-left: 1rem;
-  transition: border-color var(--expressive-fast-effects);
+  transition: 
+    border-color var(--expressive-fast-effects);
 }
 
 h1,
@@ -653,6 +655,7 @@ hr {
   height: 1px;
   border: none;
   background-color: var(--lightgray);
+  transition: background-color var(--expressive-fast-effects);
 }
 
 audio,

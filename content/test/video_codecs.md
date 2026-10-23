@@ -1,7 +1,6 @@
 ---
 title: Various Video Codecs for Browser Testing
 description: A collection of videos encoded in different Video Codecs to test Browser capabilities.
-modified: 2024-08-25
 ---
 # Outputs
 | Codec | Output |
@@ -10,55 +9,46 @@ modified: 2024-08-25
 | [[ffmpeg/codec/vcodec/hevc/index\|H.265 (HEVC)]] | ![[site_support_02_HEVC.mp4]] |
 | [[ffmpeg/codec/vcodec/vp9/index\|VP9]] | ![[site_support_03_VP9.mp4]] |
 | [[ffmpeg/codec/vcodec/av1/index\|AV1]] | ![[site_support_04_AV1_SVT.mp4]] |
-> [!warning]
+> [!warning]- Warning (HEVC)
 > It's possible that you won't be able to playback HEVC video due to browser implementation issues. See [[browser_support|here]] for more info.
 # Details
 > [!danger]
 > This section is for **advanced users only!** If you don't know [[ffmpeg/index|FFmpeg]], skip this section (or stop reading further).
 ## FFmpeg Commands
 ### H.264 (AVC)
-Snippet:
-```ps
+```ps title="Snippet"
 -c:v libx264 -preset veryslow -b:v 1M
 ```
-Full command:
-```ps
+```ps title="Full command"
 ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "scale=-2:720:flags=lanczos,fps=60" -c:v libx264 -preset veryslow -b:v 1M -movflags +faststart ".\site_support_01_AVC.mp4"
 ```
 ### H.265 (HEVC)
-> [!warning]
-> HEVC content needs extra care when handling. See [[browser_support|here]] for more info.
+> [!warning]- Warning (HEVC)
+> HEVC content **needs extra care when handling**. See [[browser_support|here]] for more info.
 
-Snippet:
-```ps
+```ps title="Snippet"
 -c:v libx265 -preset medium -b:v 1M -tag:v hvc1
 ```
-Full command:
-```ps
+```ps title="Full command"
 ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "scale=-2:720:flags=lanczos,fps=60" -c:v libx265 -preset medium -b:v 1M -tag:v hvc1 -movflags +faststart ".\site_support_02_HEVC.mp4"
 ```
 ### VP9
-Snippet:
-```ps
+```ps title="Snippet"
 -c:v libvpx-vp9 -row-mt 1 -b:v 1M 
 ```
-Full command:
-```ps
+```ps title="Full command"
 ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "scale=-2:720:flags=lanczos,fps=60" -c:v libvpx-vp9 -row-mt 1 -b:v 4M -movflags +faststart ".\site_support_03_VP9.mp4"
 ```
 ### AV1
-Snippet:
-```ps
+```ps title="Snippet"
 -c:v libsvtav1 -preset 8 -b:v 1M 
 ```
-Full command:
-```ps
+```ps title="Full command"
 ffmpeg -hwaccel auto -ss 18.222 -to 36.250 -i ".\2022-06-07_19.51.20.mp4" -vf "scale=-2:720:flags=lanczos,fps=60" -c:v libsvtav1 -preset 8 -b:v 1M -movflags +faststart ".\site_support_04_AV1_SVT.mp4"
 ```
 ## Media Properties ([[FFprobe|FFprobe]])
 ### Source
-```
-$ ffprobe -hide_banner ".\2022-06-07_19.51.20.mp4"
+```bash title="$ ffprobe -hide_banner ".\2022-06-07_19.51.20.mp4"" {8,12}
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\2022-06-07_19.51.20.mp4':
   Metadata:
     major_brand     : isom
@@ -72,8 +62,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\2022-06-07_19.51.20.mp4':
       vendor_id       : [0][0][0][0]
 ```
 ### H.264 (AVC)
-```
-$ ffprobe -hide_banner .\site_support_01_AVC.mp4
+```bash title="$ ffprobe -hide_banner .\site_support_01_AVC.mp4" {8,12}
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_01_AVC.mp4':
   Metadata:
     major_brand     : isom
@@ -88,8 +77,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_01_AVC.mp4':
       encoder         : Lavc60.21.100 libx264
 ```
 ### H.265 (HEVC)
-```
-$ ffprobe -hide_banner .\site_support_02_HEVC.mp4
+```bash title="$ ffprobe -hide_banner .\site_support_02_HEVC.mp4" {8,12}
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_02_HEVC.mp4':
   Metadata:
     major_brand     : isom
@@ -104,7 +92,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_02_HEVC.mp4':
       encoder         : Lavc60.21.100 libx265
 ```
 ### VP9
-```
+```bash title="$ ffprobe -hide_banner .\site_support_03_VP9.mp4" {8,12}
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_03_VP9.mp4':
   Metadata:
     major_brand     : isom
@@ -119,8 +107,7 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_03_VP9.mp4':
       encoder         : Lavc60.21.100 libvpx-vp9
 ```
 ### AV1
-```
-$ ffprobe -hide_banner .\site_support_04_AV1_SVT.mp4
+```bash title="$ ffprobe -hide_banner .\site_support_04_AV1_SVT.mp4" {8,12}
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\site_support_04_AV1_SVT.mp4':
   Metadata:
     major_brand     : isom

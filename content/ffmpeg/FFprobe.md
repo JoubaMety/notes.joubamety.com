@@ -21,8 +21,7 @@ Metadata tags stored in the container or in the streams are recognized and print
 Source: [ffmpeg.org](https://www.ffmpeg.org/ffprobe.html)
 
 # Examples
-```
-$ ffprobe ".\2022-06-07_19.51.20.mp4"
+```bash title="$ ffprobe .\2022-06-07_19.51.20.mp4"
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\2022-06-07_19.51.20.mp4':
   Metadata:
     major_brand     : isom

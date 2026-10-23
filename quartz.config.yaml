@@ -53,8 +53,8 @@ plugins:
     enabled: true
     options:
       theme:
-        light: github-light
-        dark: github-dark
+        light: catppuccin-latte
+        dark: catppuccin-mocha
       keepBackground: false
     order: 20
   - source: "@quartz-community/obsidian-flavored-markdown"
